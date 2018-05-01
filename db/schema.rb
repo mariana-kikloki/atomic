@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20180430193811) do
+ActiveRecord::Schema.define(version: 20180501001606) do
 
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
@@ -19,6 +19,7 @@ ActiveRecord::Schema.define(version: 20180430193811) do
     t.string "name", limit: 75
     t.string "location"
     t.text "description"
+    t.string "speaker", limit: 75
     t.integer "total_rating"
     t.decimal "member_cost", precision: 5, scale: 2
     t.decimal "guest_cost", precision: 5, scale: 2
@@ -34,6 +35,7 @@ ActiveRecord::Schema.define(version: 20180430193811) do
     t.datetime "updated_at", null: false
     t.boolean "allows_registrations", default: true
     t.string "external_link", default: ""
+    t.integer "number_participants"
     t.index ["activity_id"], name: "index_activities_on_activity_id"
   end
 
